@@ -77,8 +77,7 @@ pipeline {
            steps {
 
                 dir('mib-jcl-common') {
-                    sh "mvn -DskipTests package"
-                    // TODO publish to nexus
+                    sh "mvn -DskipTests deploy"
                 }
 
            }
