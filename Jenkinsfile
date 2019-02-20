@@ -31,7 +31,7 @@ pipeline {
             steps {
 
                 dir('mib-jcl-common') {
-                    sh "mvn -Dsonar.host.url=http://10.1.126.9:9000 compile sonar:sonar"
+                    sh "mvn -Dsonar.host.url=http://10.1.126.9:9000 test sonar:sonar"
                 }
 
             }
