@@ -151,7 +151,7 @@
         </executions>
       </plugin>
 
-      <!-- DEPLOYMENT -->
+      <!-- PACKAGING / DEPLOYMENT -->
 
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
