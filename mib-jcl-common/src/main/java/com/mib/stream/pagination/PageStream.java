@@ -1,6 +1,5 @@
 package com.mib.stream.pagination;
 
-import static com.mib.stream.MibStreams.iterator;
 import static java.lang.Long.MAX_VALUE;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Stream.concat;
@@ -52,7 +51,7 @@ public enum PageStream {
 
         PageSplitIterator(final Supplier<Page<T>> pageSupplier) {
             super(MAX_VALUE, NONNULL);
-            queryIterator = () -> iterator(chainLazily(pageSupplier.get(), pageSupplier));
+            queryIterator = () -> chainLazily(pageSupplier.get(), pageSupplier).iterator();
         }
 
         @Override
