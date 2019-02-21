@@ -5,7 +5,7 @@ pipeline {
     agent any
 
     parameters {
-        booleanParam(defaultValue: false, description: 'Publish', name: "publish")
+        booleanParam(defaultValue: false, description: 'Release and publish', name: "releaseAndPublish")
     }
 
     tools {
@@ -66,18 +66,30 @@ pipeline {
 
         }
 
-        stage('[Publishing] Publish libraries') {
+        stage('[Publishing] Snapshot') {
 
            when {
                expression {
-                   return params.publish
+                   return !params.releaseAndPublish
                }
            }
 
            steps {
-
                 sh "mvn -DskipTests deploy"
+           }
 
+        }
+
+        stage('[Publishing] Release and publish') {
+
+           when {
+               expression {
+                   return params.releaseAndPublish
+               }
+           }
+
+           steps {
+                // TODO
            }
 
         }
