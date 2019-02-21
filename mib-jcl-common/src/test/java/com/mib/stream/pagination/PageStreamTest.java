@@ -33,7 +33,7 @@ class PageStreamTest {
     public PageSupplier<String> pageSupplier;
 
     @BeforeEach
-    public void initMocks() {
+    void initMocks() {
         MockitoAnnotations.initMocks(this);
     }
 
