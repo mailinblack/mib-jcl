@@ -9,7 +9,7 @@ public enum MibBooleans {
     /**
      * Returns {@code true} if all given boolean values are {@code true}.
      * <p>
-     * Similar to the equivalent of Apache Commons Lang3 {@code BooleanUtils.and()}
+     * Similar to <i>Apache Commons Lang3</i> {@code BooleanUtils.and()}
      * but does not have this <a href="https://stackoverflow.com/questions/49252638/how-to-use-apache-commons-booleanutils-and-method">issue</a>.
      *
      * @param firstOne the first boolean value
