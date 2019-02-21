@@ -76,9 +76,7 @@ pipeline {
 
            steps {
 
-                dir('mib-jcl-common') {
-                    sh "mvn -DskipTests deploy"
-                }
+                sh "mvn -DskipTests deploy"
 
            }
 
