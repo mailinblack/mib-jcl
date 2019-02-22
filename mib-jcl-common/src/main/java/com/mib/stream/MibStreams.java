@@ -15,4 +15,6 @@ public enum MibStreams {
     public static <T> Stream<T> toStream(final Iterator<T> iterator) {
         return stream(spliteratorUnknownSize(iterator, 0), false);
     }
+
+
 }
