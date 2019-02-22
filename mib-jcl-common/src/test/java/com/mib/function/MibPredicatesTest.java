@@ -1,4 +1,4 @@
-package com.mib.stream;
+package com.mib.function;
 
 import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
