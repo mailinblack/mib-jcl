@@ -1,3 +1,7 @@
-# mib-jcl: MainInBlack Java Core Libraries
+# mib-jcl MainInBlack Java Core Libraries 
 
-MIB-JCL is a set of utilities which are not already present in Guava or Apache Commons Lang3.
+## mib-jcl-common: MainInBlack Java Core Libraries - Commons
+
+Mib-jcl-common is a set of utilities which are not already present in Guava or Apache Commons Lang3
+
+> Note: does not depend on any 3rd party dependency (except jsr305).
