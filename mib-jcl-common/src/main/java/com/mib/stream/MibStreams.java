@@ -1,20 +1,26 @@
 package com.mib.stream;
 
 import static java.util.Spliterators.spliteratorUnknownSize;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.toList;
 import static java.util.stream.StreamSupport.stream;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 /**
  * Utility methods related to {@link Stream}.
- * <p>
- * Note: similar to Guava Streams - but not considered as "Beta".
  */
 public enum MibStreams {
     ;
 
+    /**
+     * Note: similar to Guava Streams equivalent - but not considered as "Beta".
+     */
     public static <T> Stream<T> toStream(final Iterator<T> iterator) {
         return stream(spliteratorUnknownSize(iterator, 0), false);
     }
@@ -24,5 +30,22 @@ public enum MibStreams {
             return ((Collection<T>) iterable).stream();
         }
         return stream(iterable.spliterator(), false);
+    }
+
+    /**
+     * Shortcut to grouping a stream of elements with the given {@code groupingFunction}.
+     * <p>
+     * Note: Beware of the performance here: calls internally {@code collect()}
+     * on the given {@code stream} and then build a stream from the intermediate result.
+     *
+     * @param stream the Stream
+     * @param groupingFunction the {@link Function} used to group the elements
+     * @param <T> the type of the elements
+     * @param <C> the type of the discriminant used to group the elements
+     * @return a stream of groups (as a list)
+     * @throws NullPointerException if any of the given parameters is {@code null}
+     */
+    public static <T, C> Stream<List<T>> groupBy(final Stream<T> stream, final Function<T, C> groupingFunction) {
+        return stream.collect(groupingBy(groupingFunction, mapping(u -> u, toList()))).values().stream();
     }
 }
