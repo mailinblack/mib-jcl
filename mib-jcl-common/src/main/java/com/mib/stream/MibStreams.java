@@ -33,7 +33,7 @@ public enum MibStreams {
     }
 
     /**
-     * Shortcut to grouping a stream of elements with the given {@code groupingFunction}.
+     * Shortcut to do grouping of a stream of elements with the given {@code groupingFunction}.
      * <p>
      * Note: Beware of the performance here: calls internally {@code collect()}
      * on the given {@code stream} and then build a stream from the intermediate result.
