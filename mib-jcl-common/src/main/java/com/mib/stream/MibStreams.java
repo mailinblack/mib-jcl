@@ -41,7 +41,7 @@ public enum MibStreams {
      * @param stream the Stream
      * @param groupingFunction the {@link Function} used to group the elements
      * @param <T> the type of the elements
-     * @param <C> the type of the discriminant used to group the elements
+     * @param <C> the type of the discriminating criterion used to group the elements
      * @return a stream of groups (as a list)
      * @throws NullPointerException if any of the given parameters is {@code null}
      */
