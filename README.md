@@ -1,3 +1,5 @@
+
+[![Latest release](https://img.shields.io/github/release/mailinblack/mib-jcl.svg)](https://github.com/mailinblack/mib-jcl/releases/latest)
 [![Build Status](https://travis-ci.org/mailinblack/mib-jcl.svg?branch=master)](https://travis-ci.org/mailinblack/mib-jcl)
 
 # mib-jcl MainInBlack Java Core Libraries 
